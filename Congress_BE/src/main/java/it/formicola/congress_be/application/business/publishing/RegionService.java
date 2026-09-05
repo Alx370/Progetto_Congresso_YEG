@@ -1,15 +1,15 @@
 package it.formicola.congress_be.application.business.publishing;
 
-import it.formicola.congress_be.application.business.internal.domains.Region;
+import it.formicola.congress_be.application.views.item.RegionItem;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface RegionService {
 
-    List<Region> getAllRegions();
+    List<RegionItem> findAll();
 
-    Optional<Region> getRegionById(Long id);
+    Optional<RegionItem> findById(Long id);
 
-    Optional<Region> getRegionByName(String name);
+    Optional<RegionItem> findByName(String name);
 }

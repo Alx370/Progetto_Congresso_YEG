@@ -1,10 +1,10 @@
 package it.formicola.congress_be.application.business.publishing;
 
-import it.formicola.congress_be.application.business.internal.domains.SymposiumInteraction;
+import it.formicola.congress_be.application.views.item.SymposiumInteractionItem;
 
 import java.util.Optional;
 
 public interface SymposiumInteractionService {
 
-    Optional<SymposiumInteraction> getByParticipantId(Long participantId);
+    Optional<SymposiumInteractionItem> findByParticipantId(Long participantId);
 }

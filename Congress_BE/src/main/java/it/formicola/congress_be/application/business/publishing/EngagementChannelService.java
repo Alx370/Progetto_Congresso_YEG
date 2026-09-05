@@ -1,15 +1,15 @@
 package it.formicola.congress_be.application.business.publishing;
 
-import it.formicola.congress_be.application.business.internal.domains.EngagementChannel;
+import it.formicola.congress_be.application.views.item.EngagementChannelItem;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface EngagementChannelService {
 
-    List<EngagementChannel> getAllEngagementChannels();
+    List<EngagementChannelItem> findAll();
 
-    Optional<EngagementChannel> getEngagementChannelById(Long id);
+    Optional<EngagementChannelItem> findById(Long id);
 
-    Optional<EngagementChannel> getEngagementChannelByName(String name);
+    Optional<EngagementChannelItem> findByName(String name);
 }

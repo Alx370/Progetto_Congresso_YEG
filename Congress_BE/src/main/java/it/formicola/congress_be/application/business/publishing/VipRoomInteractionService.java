@@ -1,10 +1,10 @@
 package it.formicola.congress_be.application.business.publishing;
 
-import it.formicola.congress_be.application.business.internal.domains.VipRoomInteraction;
+import it.formicola.congress_be.application.views.item.VipRoomInteractionItem;
 
 import java.util.Optional;
 
 public interface VipRoomInteractionService {
 
-    Optional<VipRoomInteraction> getByParticipantId(Long participantId);
+    Optional<VipRoomInteractionItem> findByParticipantId(Long participantId);
 }

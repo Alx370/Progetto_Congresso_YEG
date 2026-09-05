@@ -1,15 +1,15 @@
 package it.formicola.congress_be.application.business.publishing;
 
-import it.formicola.congress_be.application.business.internal.domains.StakeholderType;
+import it.formicola.congress_be.application.views.item.StakeholderTypeItem;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface StakeholderTypeService {
 
-    List<StakeholderType> getAllStakeholderTypes();
+    List<StakeholderTypeItem> findAll();
 
-    Optional<StakeholderType> getStakeholderTypeById(Long id);
+    Optional<StakeholderTypeItem> findById(Long id);
 
-    Optional<StakeholderType> getStakeholderTypeByName(String name);
+    Optional<StakeholderTypeItem> findByName(String name);
 }

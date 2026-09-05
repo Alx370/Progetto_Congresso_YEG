@@ -1,15 +1,16 @@
 package it.formicola.congress_be.application.business.publishing;
 
-import it.formicola.congress_be.application.business.internal.domains.Participant;
+import it.formicola.congress_be.application.views.item.ParticipantItem;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface ParticipantService {
 
-    List<Participant> getAllParticipants();
+    Page<ParticipantItem> findAll(Pageable pageable);
 
-    Optional<Participant> getParticipantById(Long id);
+    Optional<ParticipantItem> findById(Long id);
 
-    Optional<Participant> getParticipantByEmail(String email);
+    Optional<ParticipantItem> findByEmail(String email);
 }
