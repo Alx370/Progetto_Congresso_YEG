@@ -1,0 +1,15 @@
+# Build Maven
+target/
+
+# Impostazioni locali IntelliJ IDEA
+.idea/
+
+# Database H2 generato a runtime
+*.mv.db
+*.trace.db
+*.lock.db
+
+# File temporanei Excel e Python
+.~lock.*#
+__pycache__/
+.venv/
