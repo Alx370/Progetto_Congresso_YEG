@@ -14,8 +14,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "regioni")
-public class Region {
+@Table(name = "canali_ingaggio")
+public class EngagementChannel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Region {
     @Column(name = "nome", nullable = false, unique = true, length = 100)
     private String name;
 
-    public Region(String name) {
+    public EngagementChannel(String name) {
         this.name = name;
     }
 }

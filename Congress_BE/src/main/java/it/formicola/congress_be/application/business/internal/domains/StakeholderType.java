@@ -14,17 +14,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "regioni")
-public class Region {
+@Table(name = "tipologie_stakeholder")
+public class StakeholderType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome", nullable = false, unique = true, length = 100)
+    @Column(name = "nome", nullable = false, unique = true, length = 255)
     private String name;
 
-    public Region(String name) {
+    public StakeholderType(String name) {
         this.name = name;
     }
 }
