@@ -1,9 +1,10 @@
 package it.formicola.congress_be.application.business.internal.services;
 
-import it.formicola.congress_be.application.business.internal.domains.EngagementChannel;
 import it.formicola.congress_be.application.business.internal.repository.EngagementChannelRepository;
 import it.formicola.congress_be.application.business.publishing.EngagementChannelService;
+import it.formicola.congress_be.application.views.item.EngagementChannelItem;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,23 +13,28 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
+@Transactional(readOnly = true)
 public class EngagementChannelServiceImpl implements EngagementChannelService {
 
     private final EngagementChannelRepository engagementChannelRepository;
+    private final ModelMapper mapper;
 
     @Override
-    public List<EngagementChannel> getAllEngagementChannels() {
-        return engagementChannelRepository.findAll();
+    public List<EngagementChannelItem> findAll() {
+        return engagementChannelRepository.findAll().stream()
+                .map(channel -> mapper.map(channel, EngagementChannelItem.class))
+                .toList();
     }
 
     @Override
-    public Optional<EngagementChannel> getEngagementChannelById(Long id) {
-        return engagementChannelRepository.findById(id);
+    public Optional<EngagementChannelItem> findById(Long id) {
+        return engagementChannelRepository.findById(id)
+                .map(channel -> mapper.map(channel, EngagementChannelItem.class));
     }
 
     @Override
-    public Optional<EngagementChannel> getEngagementChannelByName(String name) {
-        return engagementChannelRepository.findByName(name);
+    public Optional<EngagementChannelItem> findByName(String name) {
+        return engagementChannelRepository.findByName(name)
+                .map(channel -> mapper.map(channel, EngagementChannelItem.class));
     }
 }
