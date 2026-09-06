@@ -1,0 +1,36 @@
+<section class="participants-page">
+  <div class="intro">
+    <p class="eyebrow">Dataset congresso 2025</p>
+    <h1>Partecipanti</h1>
+    <p>Consultazione dei dati importati nel database.</p>
+  </div>
+
+  @if (loading()) {
+    <div class="status-card" role="status">Caricamento dei partecipanti…</div>
+  } @else if (errorMessage()) {
+    <div class="status-card error" role="alert">{{ errorMessage() }}</div>
+  } @else {
+    <app-view-all
+      title="Elenco partecipanti"
+      [columns]="columns"
+      [data]="participants()"
+    />
+
+    <nav class="pagination" aria-label="Paginazione partecipanti">
+      <button type="button" (click)="previousPage()" [disabled]="currentPage() === 0">
+        Precedente
+      </button>
+      <span>
+        Pagina {{ currentPage() + 1 }} di {{ totalPages() || 1 }} ·
+        {{ totalElements() }} partecipanti
+      </span>
+      <button
+        type="button"
+        (click)="nextPage()"
+        [disabled]="currentPage() + 1 >= totalPages()"
+      >
+        Successiva
+      </button>
+    </nav>
+  }
+</section>
