@@ -1,0 +1,36 @@
+<section class="table-card">
+  <div class="table-header">
+    <div>
+      <p class="eyebrow">Archivio</p>
+      <h2>{{ title }}</h2>
+    </div>
+    <span class="record-count">{{ data.length }} righe nella pagina</span>
+  </div>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          @for (column of columns; track column.key) {
+            <th scope="col">{{ column.label }}</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of data; track trackRow(row, $index)) {
+          <tr>
+            @for (column of columns; track column.key) {
+              <td>{{ getCellValue(row, column) }}</td>
+            }
+          </tr>
+        } @empty {
+          <tr>
+            <td class="empty-message" [attr.colspan]="columns.length">
+              Nessun dato disponibile.
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
