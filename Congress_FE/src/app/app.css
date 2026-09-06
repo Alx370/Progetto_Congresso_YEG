@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  padding: 0 2rem;
+  border-bottom: 1px solid #dfe7eb;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: #285846;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.brand div {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand strong {
+  color: #152535;
+  font-size: 1rem;
+}
+
+.brand div span {
+  color: #6c7b88;
+  font-size: 0.78rem;
+}
+
+.page-content {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+@media (max-width: 640px) {
+  .top-bar {
+    padding: 0 1rem;
+  }
+
+  .page-content {
+    padding: 1.25rem 1rem;
+  }
+}

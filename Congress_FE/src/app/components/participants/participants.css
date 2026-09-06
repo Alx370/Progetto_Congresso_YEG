@@ -1,0 +1,85 @@
+:host {
+  display: block;
+}
+
+.participants-page {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+}
+
+.intro {
+  margin-bottom: 1.5rem;
+}
+
+.intro .eyebrow {
+  margin: 0 0 0.4rem;
+  color: #39705e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 0;
+  color: #152535;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1;
+}
+
+.intro p:last-child {
+  margin: 0.7rem 0 0;
+  color: #607080;
+}
+
+.status-card {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #dbe3eb;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #465767;
+}
+
+.status-card.error {
+  border-color: #e7b7b7;
+  background: #fff7f7;
+  color: #9b2f2f;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: #607080;
+  font-size: 0.9rem;
+}
+
+button {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #b7c6c0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #285846;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+button:hover:not(:disabled) {
+  background: #eef6f2;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+@media (max-width: 640px) {
+  .pagination {
+    align-items: stretch;
+    flex-direction: column;
+    text-align: center;
+  }
+}
