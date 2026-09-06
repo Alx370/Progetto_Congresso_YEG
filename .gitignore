@@ -13,3 +13,6 @@ target/
 .~lock.*#
 __pycache__/
 .venv/
+Congress_FE/node_modules/
+Congress_FE/dist/
+Congress_FE/.angular/
