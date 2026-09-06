@@ -15,14 +15,14 @@ spring:
   flyway:
     enabled: true
 
-    server:
-      servlet:
-        context-path: "/api"
-
   h2:
     console:
       enabled: true
       path: /h2-console
+
+server:
+  servlet:
+    context-path: /api
 
 app:
   import:
